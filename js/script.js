@@ -3,7 +3,7 @@ let restData = [];
 const h1 = document.querySelector('.idd')
 
 function rand (num) {
-    let newNum = Math.floor(Math.random() * (num.length) + 1);
+    let newNum = Math.floor(Math.random() * (num.length));
     return newNum
 }
 
@@ -14,6 +14,7 @@ function getJson () {
         json.map(el => {
             if(parseFloat(el.Cur_DateEnd) > 2022){
                 restData.push(el.Cur_ID)
+                console.log(restData)
             }
     });
     let randId = rand(restData)
